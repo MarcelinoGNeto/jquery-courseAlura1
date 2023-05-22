@@ -47,5 +47,9 @@ function mostraPlacar(){
     // $(".placar").toggle();
     // $(".placar").slideDown(600);
     // $(".placar").slideUp(600);
-    $(".placar").slideToggle(300);
+    $(".placar").stop().slideToggle(300);
+
+    // .stop(): Essa função faz exatamente o que precisamos, 
+    // a animação que estiver acontecendo no momento é interrompida, 
+    // e uma próxima é iniciada
 }
