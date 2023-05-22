@@ -2,13 +2,25 @@ $("#botao-placar").click(mostraPlacar);
 
 function inserePlacar() {
     var corpoTabela = $(".placar").find("tbody");
-    var usuario = "Douglas"
+    var usuario = "Marcelino"
     var numPalavras = $("#contador-palavras").text();
 
     var linha = novaLinha(usuario, numPalavras);
     linha.find(".botao-remover").click(removeLinha);
 
     corpoTabela.append(linha);
+
+    $(".placar").slideDown(500);
+    scrollPlacar();
+}
+
+function scrollPlacar() {
+    var posicaoPlacar = $(".placar").offset().top;
+
+    $("html, body").animate(
+    {
+        scrollTop: posicaoPlacar
+    }, 1000);
 }
 
 function novaLinha(usuario, palavras) {
