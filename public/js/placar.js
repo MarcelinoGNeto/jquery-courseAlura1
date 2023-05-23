@@ -88,8 +88,14 @@ function sincronizaPlacar() {
     };
     
     $.post("http://localhost:3000/placar", dados, function() { 
-        alert("salvou placar no servidor")
-     })
+        $(".tooltip").tooltipster("open").tooltipster("content", "Sucesso ao sincronizar");
+    }).fail(function(){
+         $(".tooltip").tooltipster("open").tooltipster("content", "Falha ao sincronizar");
+     }).always(function(){
+        setTimeout(() => {
+            $(".tooltip").tooltipster("close")
+        }, 1200);
+     });
 };
 
 function atualizaPlacar(){
