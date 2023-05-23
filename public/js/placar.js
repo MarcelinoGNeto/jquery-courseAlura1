@@ -88,6 +88,16 @@ function sincronizaPlacar() {
     };
     
     $.post("http://localhost:3000/placar", dados, function() { 
-        console.log("salvou placar no servidor")
+        alert("salvou placar no servidor")
      })
 };
+
+function atualizaPlacar(){
+    $.get("http://localhost:3000/placar", function(data){
+        $(data).each(function(){
+            var linha = novaLinha(this.usuario, this.palavras);
+            linha.find(".botao-remover").click(removeLinha);
+            $("tbody").append(linha);
+        });
+    });
+}
