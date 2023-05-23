@@ -11,7 +11,10 @@
     <div class="container">
         <h1 class="center">Alura Typer</h1>
         <p class="frase center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
+        <div class="center">
+            <p id="erro">Ocorreu um erro, por favor tente novamente!</p>
+            <img src="img/spinner.gif" alt="Spinner" id="spinner">
+        </div>
         <ul class="informacoes center">
             <li>
                 <i class="small material-icons icones">description</i>
@@ -26,15 +29,19 @@
         <textarea class="campo-digitacao" rows="8" cols ="40"></textarea>
 
         <div class="botoes">
-            <a id="botao-reiniciar" class="btn-floating btn-large waves-effect waves-light red">
+            <a id="botao-reiniciar" class="btn-floating btn-large waves-effect waves-light red" title="reiniciar">
                 <i class="material-icons">restore</i>
             </a>
-            <a class="btn-floating btn-large waves-effect waves-light green" id="botao-placar">
+            <a class="btn-floating btn-large waves-effect waves-light green" id="botao-placar" title="exibir placar">
                 <i class="material-icons">assignment</i>
             </a>
-            <a class="btn-floating btn-large waves-effect waves-light blue" id="botao-frase">
+            <a class="btn-floating btn-large waves-effect waves-light blue" id="botao-frase" title="frase aleatória">
                 <i class="material-icons">shuffle</i>
             </a>
+            <a class="btn-floating btn-large waves-effect waves-light cyan" id="botao-frase-id" title="selecionar frase por id">
+                <i class="material-icons">repeat_one</i>
+            </a>
+            <input type="number" id="frase-id" min="0" title="selecione um id e clique em 'selecionar frase'">
         </div>
 
         <ul class="center">
